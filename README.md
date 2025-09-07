@@ -1,151 +1,94 @@
-# EventPortal Client
+EventPortal Client
 
-A professional React.js frontend for the Campus Event Management Portal.
+A React.js frontend for the Campus Event Management Portal.
 
-## Features
+The app has two types of users:
 
-- **Modern UI/UX**: Clean, professional interface with responsive design
-- **Authentication**: Secure login and registration with JWT tokens
-- **Event Management**: Browse, register, and manage events
-- **Dashboard**: Comprehensive analytics and statistics
-- **Reports**: Interactive charts and data visualization
-- **Profile Management**: User profile editing and management
+Admin – can add, edit, and manage events.
 
-## Tech Stack
+Student – can browse events and register for them.
 
-- **React.js 18**: Modern React with hooks
-- **React Router**: Client-side routing
-- **React Hook Form**: Form handling and validation
-- **Axios**: HTTP client with interceptors
-- **Recharts**: Data visualization and charts
-- **Lucide React**: Modern icon library
-- **React Hot Toast**: Toast notifications
-- **Date-fns**: Date manipulation utilities
+The data is stored in a MySQL database.
 
-## Getting Started
 
-### Prerequisites
+Features
 
-- Node.js (v16 or higher)
-- npm or yarn
+Secure login and registration
 
-### Installation
+Admin dashboard to manage events
 
-```bash
-# Install dependencies
+Student event browsing and registration
+
+Profile management
+
+Responsive design for desktop and mobile
+
+
+Setup
+Prerequisites
+
+Node.js v16+
+
+npm or yarn
+
+MySQL database
+
+Installation
+
+Clone the repository:
+
+git clone https://github.com/SaiSatvikGootyKase/Webknot.git
+cd Webknot
+
+
+Install dependencies:
+
 npm install
+# or
+yarn install
 
-# Start development server
-npm start
-```
 
-The application will be available at `http://localhost:3000`
+Create a .env file in the root:
 
-### Environment Variables
-
-Create a `.env` file in the client directory:
-
-```env
 REACT_APP_API_URL=http://localhost:5000/api
-```
 
-## Project Structure
 
-```
+Start the development server:
+
+npm start
+# or
+yarn start
+
+
+The app will run at: http://localhost:3000
+
+Build for Production
+npm run build
+# or
+yarn build
+
+
+This will generate a build/ folder ready to deploy.
+
+Project Structure
 src/
-├── components/          # Reusable UI components
-│   ├── Layout.js       # Main layout with sidebar
-│   └── ProtectedRoute.js # Route protection
-├── contexts/           # React contexts
-│   └── AuthContext.js  # Authentication context
-├── pages/             # Page components
-│   ├── Login.js       # Login page
-│   ├── Register.js    # Registration page
-│   ├── Dashboard.js   # Dashboard with analytics
-│   ├── Events.js      # Events listing
-│   ├── EventDetails.js # Event details page
-│   ├── MyRegistrations.js # User registrations
-│   ├── Reports.js     # Reports and analytics
-│   └── Profile.js     # User profile
-├── utils/             # Utility functions
-│   └── api.js         # API configuration
-├── App.js             # Main app component
-├── index.js           # App entry point
+├── components/        # Reusable UI components
+├── contexts/          # Authentication and other contexts
+├── pages/             # Pages: Login, Register, Dashboard, Events, etc.
+├── utils/             # API and helper functions
+├── App.js             # Main component
+├── index.js           # Entry point
 └── index.css          # Global styles
-```
 
-## Available Scripts
 
-- `npm start`: Start development server
-- `npm build`: Build for production
-- `npm test`: Run tests
-- `npm eject`: Eject from Create React App
+Usage
 
-## Features Overview
+Admin: Log in → Add or manage events → View reports and dashboards.
 
-### Authentication
-- Secure login with email/password
-- User registration with college selection
-- JWT token-based authentication
-- Protected routes
+Student: Log in → Browse events → Register → View personal registrations.
 
-### Dashboard
-- Key metrics and statistics
-- Interactive charts and graphs
-- Recent events overview
-- Quick actions
+Notes
 
-### Events
-- Event browsing with filters
-- Event registration
-- Event details with full information
-- Search and filtering capabilities
+Make sure the MySQL server is running and backend API is configured correctly.
 
-### Reports
-- Comprehensive analytics
-- Interactive charts (Bar, Pie, Line, Area)
-- Event performance metrics
-- Student participation statistics
-
-### Profile Management
-- User profile editing
-- Password change functionality
-- Account statistics
-- College information
-
-## API Integration
-
-The client communicates with the backend API through:
-
-- **Base URL**: Configurable via environment variables
-- **Authentication**: JWT tokens in Authorization headers
-- **Error Handling**: Automatic token refresh and logout on 401 errors
-- **Request/Response Interceptors**: Automatic token injection and error handling
-
-## Styling
-
-The application uses a custom CSS framework with:
-
-- **Utility Classes**: Tailwind-inspired utility classes
-- **Component Styles**: Custom component styling
-- **Responsive Design**: Mobile-first approach
-- **Modern UI**: Clean, professional appearance
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## Contributing
-
-1. Follow the existing code style
-2. Use meaningful component and variable names
-3. Add proper error handling
-4. Include loading states for async operations
-5. Test on multiple screen sizes
-
-## License
-
-MIT License - see LICENSE file for details
+Admin and student roles are handled on the backend for proper access control.
